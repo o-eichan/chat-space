@@ -32,8 +32,8 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :groups
-- has_many :messages through: :groups_users
+- has_many :messages
+- has_many :groups through: :users_groups
 
 
 ## groupsテーブル
@@ -42,12 +42,11 @@ Things you may want to cover:
 |------|----|-------|
 |group_name|string|null: false|
 |message_id|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
 
 ### Association
 
-- has_many :message through: :messages_groups
-- has_many :user through: :groups_users
+- has_many :messages
+- has_many :users through: :users_messages
 
 
 ## messagesテーブル
@@ -56,35 +55,20 @@ Things you may want to cover:
 |------|----|-------|
 |body|text|null: false|
 |image|string|null: false|
-|created_at|timestamp|null: false|
 |group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
-
 
 ### Association
 
 - belongs_to :user
-- has_many :grouos through: :messages_groups
-
-
-## messages_groupsテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|messages_id|integer|null: false, foreign_key: true|
-|groups_id|integer|null: false, foreign_key: true|
-
-### Association
-
-- belongs_to :message
 - belongs_to :group
 
 
-## groups_userテーブル
+## users_groupsテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|groups_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
 |user_id|integer|null: false, foreign_key: true|
 
 ### Association

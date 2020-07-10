@@ -34,6 +34,7 @@ Things you may want to cover:
 
 - has_many :messages
 - has_many :groups through: :users_groups
+- has_many :users_groups
 
 
 ## groupsテーブル
@@ -46,6 +47,7 @@ Things you may want to cover:
 
 - has_many :messages
 - has_many :users through: :users_messages
+- has_many :users_groups
 
 
 ## messagesテーブル

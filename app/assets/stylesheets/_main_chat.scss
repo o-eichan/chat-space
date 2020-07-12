@@ -2,4 +2,17 @@
   height: 100vh;
   width: calc(100vw - 300px);
   background-color: #ffffff;
+  &__group-info{
+    height: 100px;
+    border: 1px solid #eeeeee;
+    background-color: #ffffff;
+  }
+  &__message-list{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+  }
+  &__message-form{
+    height: 90px;
+    background-color: #d2d2d2;
+  }
 }

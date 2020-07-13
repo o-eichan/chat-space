@@ -1,4 +1,14 @@
 .main-chat
   .main-chat__group-info
+    .group-info__details
+      %p.group-name
+        test
+      %ul.group-list
+        members :
+        %li.group-member
+          abe
+    .edit-btn 
+      = link_to "Edit", "#", class: 'edit-text'
+      
   .main-chat__message-list
   .main-chat__message-form

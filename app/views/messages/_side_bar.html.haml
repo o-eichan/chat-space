@@ -1,6 +1,10 @@
 .side-bar
   .side-bar__user-name
     .top-items
-      .top-items__name
+      %p.top-items__name masa
       .top-items__icons
+        = link_to "#", class: "top-items__icons--btn top-items__icons--facebook" do
+          = icon('fab', 'facebook-square', class: 'facebook')
+        = link_to "#", class: "top-items__icons--btn top-items__icons--edit" do
+          = icon('far', 'edit', class: 'edit' )
   .side-bar__group-list

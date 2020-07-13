@@ -11,16 +11,25 @@
       height: 20px;
       width: 260px;
       margin: 0 20px;
-      background-color: #d8d8d8;
       display: flex;
       justify-content: space-between;
       &__name{
         height: auto;
         width: 100%;
+        color: #ffffff;
       }
       &__icons{
         height: auto;
         width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        &--btn{
+          color: #ffffff;
+        }
+        &--edit{
+          margin-left: 5px;
+        }
       }
     }
   }

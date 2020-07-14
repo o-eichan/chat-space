@@ -3,10 +3,11 @@
     .top-items
       %p.top-items__name masa
       .top-items__icons
-        = link_to "#", class: "top-items__icons--btn top-items__icons--setting" do
-          = icon('fas', 'cog', class: 'setting')
         = link_to "#", class: "top-items__icons--btn top-items__icons--edit" do
           = icon('far', 'edit', class: 'edit' )
+        = link_to "#", class: "top-items__icons--btn top-items__icons--setting" do
+          = icon('fas', 'cog', class: 'setting')
+
   .side-bar__group-list
     .group-infomation
       .group-name 

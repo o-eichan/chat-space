@@ -28,3 +28,10 @@
       .Message
         こんにちは！
   .main-chat__message-form
+    .Form
+      .Input-content
+        %input.Input-text{placeholder: "type a message", type: "text"}
+        %label.Input-img
+          = icon('fas', 'image')
+          %input{type: "file", class: "hidden"}
+      %input.Send-btn{type: "submit", value: "Send"}

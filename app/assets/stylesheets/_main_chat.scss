@@ -1,0 +1,107 @@
+.main-chat{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: #ffffff;
+  &__group-info{
+    height: 100px;
+    border: 1px solid #eeeeee;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px 0;
+    .group-info__details{
+      .group-name{
+        margin-top: 35px;
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: #333333;
+      }
+      .group-list{
+        font-size: 12px;
+        color: #999999;
+        display: flex;
+        .group-member{
+          padding: 0 5px 0 0;
+        }
+      }
+    }
+    .edit-btn{
+      display: block;
+      margin-top: 28px;
+      padding: 0 20px;
+      width: 72px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px;
+      border: 1px solid #38aef0;
+      .edit-text{
+        text-decoration: none;
+        color: #38aef0;
+      }
+
+    }
+  }
+  &__message-list{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 35px 40px;
+    overflow: scroll;
+    .Message-box{
+      .Message-info{
+        display: flex;
+        margin-bottom: 12px;
+        .Contributor{
+          font-size: 16px;
+          color: #333333;
+        }
+        .Date{
+          font-size: 12px;
+          color: #999999;
+          margin-left: 10px;
+        }
+      }
+      .Message{
+        font-size: 14px;
+        color: #434a54;
+        margin-bottom: 46px;
+      }
+    }
+  }
+  &__message-form{
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px 20px;
+    .Form{
+      display: flex;
+      justify-content: space-between;
+      .Input-content{
+        width: 100%;
+        display: flex;
+        position: relative;
+        .Input-text{
+          height: 50px;
+          width: 100%;
+          padding: 0 40px 0 10px;
+          border: none;
+        }
+        .Input-img{
+          position: absolute;
+          right: 10px;
+          top: 12px;
+          .hidden{
+            display: none;
+          } 
+        }
+      }
+      .Send-btn{
+        height: 50px;
+        padding: 0 30px;
+        margin-left: 15px;
+        font-size: 16px;
+        background-color: #38aef0;
+        color: #ffff;
+        border: none;
+      }
+    } 
+  }
+}

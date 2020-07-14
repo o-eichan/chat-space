@@ -1,0 +1,37 @@
+.main-chat
+  .main-chat__group-info
+    .group-info__details
+      %p.group-name
+        test
+      %ul.group-list
+        members :
+        %li.group-member
+          abe
+    .edit-btn 
+      = link_to "Edit", "#", class: 'edit-text'
+      
+  .main-chat__message-list
+    .Message-box
+      .Message-info
+        .Contributor
+          Masa
+        .Date
+          2020/7/13(mon) 17:00:00
+      .Message
+        おはよう！
+    .Message-box
+      .Message-info
+        .Contributor
+          hoge
+        .Date
+          2020/7/14(tue) 18:00:00
+      .Message
+        こんにちは！
+  .main-chat__message-form
+    .Form
+      .Input-content
+        %input.Input-text{placeholder: "type a message", type: "text"}
+        %label.Input-img
+          = icon('fas', 'image')
+          %input{type: "file", class: "hidden"}
+      %input.Send-btn{type: "submit", value: "Send"}

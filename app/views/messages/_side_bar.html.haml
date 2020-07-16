@@ -10,8 +10,10 @@
           = icon('fas', 'cog', class: 'setting')
 
   .side-bar__group-list
-    .group-infomation
-      .group-name 
-        TECH CAMP
-      .group-message 
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group-infomation
+        = link_to '#' do
+          .group-name 
+            = group.name
+          .group-message 
+            メッセージはまだありません

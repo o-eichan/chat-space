@@ -11,22 +11,17 @@
       = link_to "Edit", "#", class: 'edit-text'
       
   .main-chat__message-list
-    .Message-box
-      .Message-info
-        .Contributor
-          Masa
-        .Date
-          2020/7/13(mon) 17:00:00
-      .Message
-        おはよう！
-    .Message-box
-      .Message-info
-        .Contributor
-          hoge
-        .Date
-          2020/7/14(tue) 18:00:00
-      .Message
-        こんにちは！
+  
+    = render @messages
+    -# .Message-box
+    -#   .Message-info
+    -#     .Contributor
+    -#       Masa
+    -#     .Date
+    -#       2020/7/13(mon) 17:00:00
+    -#   .Message
+    -#     おはよう！
+
   .main-chat__message-form
     .Fotter
       = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|

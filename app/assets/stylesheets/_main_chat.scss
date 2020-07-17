@@ -41,6 +41,7 @@
 
     }
   }
+
   &__message-list{
     height: calc(100vh - 190px);
     background-color: #fafafa;
@@ -50,11 +51,11 @@
       .Message-info{
         display: flex;
         margin-bottom: 12px;
-        .Contributor{
+        %__userName{
           font-size: 16px;
           color: #333333;
         }
-        .Date{
+        &__date{
           font-size: 12px;
           color: #999999;
           margin-left: 10px;
@@ -67,40 +68,43 @@
       }
     }
   }
+
   &__message-form{
     height: 90px;
     background-color: #d2d2d2;
     padding: 20px 40px 20px;
     .Fotter{
-      display: flex;
-      justify-content: space-between;
-      .Input-content{
-        width: 100%;
+      .Form{
         display: flex;
-        position: relative;
-        .Input-text{
-          height: 50px;
+        justify-content: space-between;
+        .Input-content{
           width: 100%;
-          padding: 0 40px 0 10px;
+          display: flex;
+          position: relative;
+          .Input-text{
+            height: 50px;
+            width: 100%;
+            padding: 0 40px 0 10px;
+            border: none;
+          }
+          .Input-img{
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            .Hidden{
+              display: none;
+            } 
+          }
+        }
+        .Send-btn{
+          height: 50px;
+          padding: 0 30px;
+          margin-left: 15px;
+          font-size: 16px;
+          background-color: #38aef0;
+          color: #ffff;
           border: none;
         }
-        .Input-img{
-          position: absolute;
-          right: 10px;
-          top: 12px;
-          .Hidden{
-            display: none;
-          } 
-        }
-      }
-      .Send-btn{
-        height: 50px;
-        padding: 0 30px;
-        margin-left: 15px;
-        font-size: 16px;
-        background-color: #38aef0;
-        color: #ffff;
-        border: none;
       }
     } 
   }

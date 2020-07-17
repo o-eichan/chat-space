@@ -2,36 +2,24 @@
   .main-chat__group-info
     .group-info__details
       %p.group-name
-        test
+        = @group.name
       %ul.group-list
         members :
         %li.group-member
-          abe
+          - @group.users.each do |user|
+            = user.name
     .edit-btn 
-      = link_to "Edit", "#", class: 'edit-text'
+      = link_to "Edit", edit_group_path(@group), class: 'edit-text'
       
   .main-chat__message-list
-    .Message-box
-      .Message-info
-        .Contributor
-          Masa
-        .Date
-          2020/7/13(mon) 17:00:00
-      .Message
-        おはよう！
-    .Message-box
-      .Message-info
-        .Contributor
-          hoge
-        .Date
-          2020/7/14(tue) 18:00:00
-      .Message
-        こんにちは！
+    = render @messages
+
   .main-chat__message-form
-    .Form
-      .Input-content
-        %input.Input-text{placeholder: "type a message", type: "text"}
-        %label.Input-img
-          = icon('fas', 'image')
-          %input{type: "file", class: "hidden"}
-      %input.Send-btn{type: "submit", value: "Send"}
+    .Fotter
+      = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+        .Input-content
+          = f.text_field :content, class: 'Input-text', placeholder: 'type a message'
+          = f.label :image, class: 'Input-img' do
+            = icon('far', 'image', class: 'Form__icon')
+            = f.file_field :image, class: 'Hidden'
+        = f.submit 'Send', class: 'Send-btn'

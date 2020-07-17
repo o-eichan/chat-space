@@ -28,10 +28,16 @@
       .Message
         こんにちは！
   .main-chat__message-form
-    .Form
-      .Input-content
-        %input.Input-text{placeholder: "type a message", type: "text"}
-        %label.Input-img
-          = icon('fas', 'image')
-          %input{type: "file", class: "hidden"}
-      %input.Send-btn{type: "submit", value: "Send"}
+    .Fotter
+      = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
+        .Input-content
+          -# %input.Input-text{placeholder: "type a message", type: "text"}
+          = f.text_field :content, class: 'Input-text', placeholder: 'type a message'
+          -# %label.Input-img
+          -#   = icon('fas', 'image')
+          -#   %input{type: "file", class: "hidden"}
+          = f.label :image, class: 'Input-img' do
+            = icon('far', 'image', class: 'Form__icon')
+            = f.file_field :image, class: 'Hidden'
+        -# %input.Send-btn{type: "submit", value: "Send"}
+        = f.submit 'Send', class: 'Send-btn'

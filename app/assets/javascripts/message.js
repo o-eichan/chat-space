@@ -60,6 +60,9 @@ $(function(){
       $('form')[0].reset();
     })
 
+    .always(function() {
+      $(".Send-btn").prop("disabled", false);
+    });
   })
 });
 

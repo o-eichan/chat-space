@@ -59,10 +59,12 @@ $(function(){
       $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
       $('form')[0].reset();
     })
-
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    })
     .always(function() {
       $(".Send-btn").prop("disabled", false);
-    });
+    })
   })
 });
 

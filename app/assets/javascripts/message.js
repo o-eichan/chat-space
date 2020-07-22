@@ -1,7 +1,6 @@
 $(function(){
 
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
     if (message.image) {
       let html =  
         `<div class="Message-box">
@@ -57,6 +56,7 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $(".main-chat__message-list").append(html);
+      $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
       $('form')[0].reset();
     })
 

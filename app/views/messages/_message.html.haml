@@ -1,8 +1,8 @@
-.Message-box
+.Message-box{data: {message: {id: message.id}}}
   .Message-info
-    .MessageInfo__userName
+    .Message-info__userName
       = message.user.name
-    .MessageInfo__date
+    .Message-info__date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .Message
     - if message.content.present?

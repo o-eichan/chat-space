@@ -38,17 +38,19 @@
     background-color: #2f3e51;
     padding: 0 20px;
     overflow : scroll;
-      .group-infomation{
-        padding: 20px 0 40px;
-        font-weight: bold;
-        color: #ffffff;
-        .group-name{
-          font-size: 15px;
-          margin-bottom: 5px;
-        }
-        .group-message{
-          font-size: 11px;
-        }
+    .group-infomation{
+      padding: 20px 0 40px;
+      color: #ffffff;
+      a {
+        color: #fff;
+        text-decoration: none;
       }
+      .group-name{
+        font-size: 15px;
+      }
+      .group-message{
+        font-size: 11px;
+      }
+    }
   }
 }

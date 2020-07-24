@@ -1,15 +1,14 @@
 $(function(){
-  let last_message_id = $('.MessageBox:last').data("message-id") || 0;
 
   function buildHTML(message){
     if (message.image) {
       let html =  
         `<div class="Message-box" data-message-id=${message.id}>
           <div class="Message-info">
-            <div class="MessageInfo__userName">
+            <div class="Message-info__userName">
               ${message.user_name}
             </div>
-            <div class="MessageInfo__date">
+            <div class="Message-info__date">
               ${message.created_at}
             </div>
           </div>
@@ -25,10 +24,10 @@ $(function(){
       let html = 
         `<div class="Message-box" data-message-id=${message.id}>
           <div class="Message-info">
-            <div class="MessageInfo__userName">
+            <div class="Message-info__userName">
               ${message.user_name}
             </div>
-            <div class="MessageInfo__date">
+            <div class="Message-info__date">
               ${message.created_at}
             </div>
           </div>

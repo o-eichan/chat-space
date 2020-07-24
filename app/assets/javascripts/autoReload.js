@@ -1,6 +1,4 @@
 $(function(){
-  let last_message_id = $('.MessageBox:last').data("message-id") || 0;
-
   function buildHTML(message){
     if (message.image) {
       let html =  
@@ -41,36 +39,10 @@ $(function(){
         return html;
     }
   }
-  
-  $(".Form").on("submit", function(e){
-    e.preventDefault()
-    let formData = new FormData(this);
-    let url = $(this).attr("action");
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: formData,  
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-    .done(function(data){
-      let html = buildHTML(data);
-      $(".main-chat__message-list").append(html);
-      $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
-      $('form')[0].reset();
-    })
-    .fail(function() {
-      alert("メッセージ送信に失敗しました");
-    })
-    .always(function() {
-      $(".Send-btn").prop("disabled", false);
-    })
-  })
 
   let reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
-    let last_message_id = $('.MessageBox:last').data("message-id") || 0;
+    let last_message_id = $('.Message-box:last').data("message-id") || 0;
     $.ajax({
       //ルーティングで設定した通り/groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/messages",
@@ -91,6 +63,7 @@ $(function(){
         });
         //メッセージが入ったHTMLに、入れ物ごと追加
         $('.main-chat__message-list').append(insertHTML);
+        $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
       }
     })
     .fail(function() {
